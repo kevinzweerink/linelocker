@@ -17,16 +17,16 @@
 	<label for="country">Country:</label>
 	<?php require_once("countries.inc.php") ?>
 	
-	<label for="state_province">State/Province</label>
+	<label for="state_province">State/Province:</label>
 	<input type="text" name="state_province" placeholder="State/Province">
 	
-	<label for="city">City</label>
+	<label for="city">City:</label>
 	<input type="text" name="city" placeholder="city">
 	
-	<label for="phone_number">Phone Number</label>
+	<label for="phone_number">Phone Number:</label>
 	<input type="tel" name="telephone" placeholder="1-555-555-5555">
 	
-	<label for="phone_carrier">Phone Carrier</label>
+	<label for="phone_carrier">Phone Carrier:</label>
 	<select name="phone_carrier">
 		<option value="Verizon" selected="selected">Verizon</option>
 		<option value="AT&T">AT&T</option>
