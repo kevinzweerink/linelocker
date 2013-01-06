@@ -25,11 +25,15 @@
         
         <div class="info_container">
             <p>Connect with other slackliners, find spots, share equipment.</p>
-            <a href="tour.php">Take A Tour</a>
-            <a href="register.php">Register Now</a>
+            <a href="tour.php"><div class="arrow_button">
+                Take A Tour
+            </div> </a><!-- arrow-button -->
+            <a href="register.php"><div class="arrow_button">
+                Register Now
+            </div></a> <!-- arrow-button -->
         </div> <!-- info_container -->
       
-            
+
     </div> <!-- wrapper -->
 </body>
 </html>

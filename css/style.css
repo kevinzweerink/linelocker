@@ -1,7 +1,162 @@
 body {
+	background-color: #f2f3f4;
 	font-family: "ff-meta-web-pro", helvetica, arial, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	font-family: "din-condensed-web", helvetica, arial, sans-serif
+h1{
+	font-family: "din-condensed-web", helvetica, arial, sans-serif;
+	font-weight: normal;
+	font-size: 6em;
+	text-transform: uppercase;
+	color: #303030;
+	text-align: center;
+	margin: 0em;
+}
+
+.wrapper{
+	position: relative;
+	margin-top: 5em;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+/*----- containers -----*/
+
+.login_container{
+	width: 50%;
+	float: left;
+	padding-right: .5em;
+	border-right: 2px solid #303030;
+}
+
+.info_container{
+ 	width: 40%;
+	float: left;
+	padding-left: 2em;
+}
+
+/*----- forms -----*/
+
+input[type="text"], input[type="password"]{
+	width: 80%;
+	display: block;
+	margin: .5em auto;
+	font-family: "ff-meta-web-pro", helvetica, arial, sans-serif;
+	color: #303030;
+	font-size: 1.5em;
+	padding: .3em .3em ;
+}
+
+input[type="submit"]{
+	font-family: "ff-meta-web-pro", helvetica, arial, sans-serif;
+	font-size: 2em;
+	background-color: #ccc;
+	color: #303030;
+	border: none;
+	padding: .1em .7em;
+	margin-left: 8%;
+	margin-top: .5em;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover{
+        color: white;
+	background-color: #303030;
+}
+
+/*----- images -----*/
+
+.login_logo{
+	margin: auto;
+	display: block;
+	width: 25%;
+}
+
+/*----- paragraphs -----*/
+
+.info_container p{
+	font-size: 2em;
+	width: 75%;
+	display: block;
+	margin: 3em auto 1em auto;
+}
+
+/*----- links -----*/
+
+a{
+	text-decoration: none;
+	color: #303030;
+}
+
+/*.info_container a{
+	background-color: white;
+	padding: .1em .7em;
+	width: 40%;
+	font-size: 2em;
+	display: block;
+	margin: auto;
+	margin-top: .5em;
+}*/
+
+.info_container a {
+	padding: 0 .7em;
+	font-size: 2em;
+	margin-left: 2em;
+	clear: both;
+	margin-top: 1em;
+	
+}
+
+.info_container .arrow_button {
+	margin-bottom: .5em;
+	padding-left:.7em;
+	padding-right:.7em;
+
+}
+
+.arrow_button {
+  padding: 0.05em;
+  background-color: #ccc;
+  display: inline-block;
+  position: relative;
+}
+
+.arrow_button:after {
+  border: 25px solid transparent;
+  content: ' ';
+  height:0;
+  width:0;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  border-left-color: #ccc; 
+}
+
+.arrow_button:before {
+  border: 25px solid #ccc;
+  content: ' ';
+  height:0;
+  width:0;
+  position: absolute;
+  top: 0;
+  left: -25px;
+  border-left-color: transparent;
+  z-index: -99999;
+}
+
+.arrow_button:hover {
+  background-color: #303030;
+  color: white;
+}
+
+.arrow_button:hover:before {
+  border:25px solid #303030;
+  border-left-color: transparent;
+}
+
+.arrow_button:hover:after {
+  border: 25px solid transparent;
+  border-left-color: #303030;
 }
