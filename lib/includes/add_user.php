@@ -48,15 +48,15 @@ if ($_POST) {
 	$last_name = (isset($_POST['last_name'])) ? $_POST['last_name'] : '';
 	$username = strtolower($first_name).strtolower($last_name);
 	$email = (isset($_POST['email'])) ? $_POST['email'] : '';
-	$passcode = (isset($_POST['password'])) ? $_POST['password'] : '';
+	$password = (isset($_POST['password'])) ? $_POST['password'] : '';
 	$country = (isset($_POST['country'])) ? $_POST['country'] : '';
 	$state_province = (isset($_POST['state_province'])) ? $_POST['state_province'] : '';
 	$city = (isset($_POST['city'])) ? $_POST['city'] : '';
 	
 	if (!$missing && !$errors) {
 		require_once('db_connect.inc.php');
-		$query = "INSERT INTO users (first_name, last_name, password, username, email, country, state_province, city)
-VALUES ('$first_name', '$last_name', '$username', '$passcode', '$email', '$country', '$state_province', '$city')";
+		$query = "INSERT INTO users (first_name, last_name, username, password, email, country, state_province, city)
+VALUES ('$first_name', '$last_name', '$username', '$password', '$email', '$country', '$state_province', '$city')";
 		$connection->beginTransaction();
 		$connection->exec($query);
 		$connection->commit();
