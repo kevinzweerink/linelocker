@@ -34,6 +34,9 @@ if ($_POST) {
 		if ($length < 6) {
 			array_push($errors, "Passwords must be at least 6 characters long");
 		}
+		if (!($_POST['password'] == $_POST['confirm_password'])) {
+			array_push($errors, "Passwords must match");
+		}
 	}
 	
 	if ($_POST['email']) {
@@ -44,19 +47,26 @@ if ($_POST) {
 		array_push($missing, "E-mail");
 	}
 	
+	if (!$_POST['experience']) {
+		array_push($missing, "Experience");
+	} else {
+		
+	}
+	
 	$first_name = (isset($_POST['first_name'])) ? $_POST['first_name'] : '';
 	$last_name = (isset($_POST['last_name'])) ? $_POST['last_name'] : '';
 	$username = strtolower($first_name).strtolower($last_name);
 	$email = (isset($_POST['email'])) ? $_POST['email'] : '';
-	$password = (isset($_POST['password'])) ? $_POST['password'] : '';
+	$experience = (isset($_POST['experience'])) ? $_POST['experience'] : '';
+	$password = (isset($_POST['password'])) ? sha1($_POST['password']) : '';
 	$country = (isset($_POST['country'])) ? $_POST['country'] : '';
 	$state_province = (isset($_POST['state_province'])) ? $_POST['state_province'] : '';
 	$city = (isset($_POST['city'])) ? $_POST['city'] : '';
 	
 	if (!$missing && !$errors) {
 		require_once('db_connect.inc.php');
-		$query = "INSERT INTO users (first_name, last_name, username, password, email, country, state_province, city)
-VALUES ('$first_name', '$last_name', '$username', '$password', '$email', '$country', '$state_province', '$city')";
+		$query = "INSERT INTO users (first_name, last_name, username, password, experience, email, country, state_province, city)
+VALUES ('$first_name', '$last_name', '$username', '$password', '$experience', '$email', '$country', '$state_province', '$city')";
 		$connection->beginTransaction();
 		$connection->exec($query);
 		$connection->commit();
@@ -95,17 +105,29 @@ VALUES ('$first_name', '$last_name', '$username', '$password', '$email', '$count
 	<label for="email">E-mail:</label>
 	<input type="email" name="email" placeholder="E-mail" class="required" value="<?php echo $email ?>">
 	
-	<label for="password">Password</label>
+	<label for="password">Password:</label>
 	<input type="password" name="password" placeholder="Password" class="required">
 	
-	<label for="country">Country:</label>
-	<?php require_once("countries.inc.php") ?>
+	<label for="password">Confirm Password:</label>
+	<input type="password" name="confirm_password" placeholder="Confirm Password" class="required">
+	
+	<label for="experience">Experience:</label>
+	<select name="experience" class="required">
+		<option value="No Experience">No Experience</option>
+		<option value="Beginner">Beginner</option>
+		<option value="Intermediate">Intermediate</option>
+		<option value="Advanced">Advanced</option>
+		<option value="Pro">Pro</option>
+	</select>
+	
+	<label for="city">City:</label>
+	<input type="text" name="city" placeholder="city">
 	
 	<label for="state_province">State/Province:</label>
 	<input type="text" name="state_province" placeholder="State/Province">
 	
-	<label for="city">City:</label>
-	<input type="text" name="city" placeholder="city">
+	<label for="country">Country:</label>
+	<?php require_once("countries.inc.php") ?>
 	
 	<input type="submit" value="Submit">
 	

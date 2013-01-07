@@ -20,6 +20,8 @@
 		}
 		
 		if ($_POST['password']) {
+		
+			$password = sha1($_POST['password']);
 			
 		} else {
 			array_push($missing, 'password');
