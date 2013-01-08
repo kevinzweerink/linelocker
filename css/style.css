@@ -3,6 +3,12 @@ body {
 	font-family: "ff-meta-web-pro", helvetica, arial, sans-serif;
 }
 
+* {
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
 h1{
 	font-family: "din-condensed-web", helvetica, arial, sans-serif;
 	font-weight: normal;
@@ -104,7 +110,7 @@ a{
 .info_container a {
 	padding: 0 .7em;
 	font-size: 2em;
-	margin-left: 2em;
+	margin-left: 1em;
 	clear: both;
 	margin-top: 1em;
 	
@@ -148,11 +154,10 @@ a{
 }
 
 .arrow_button:hover {
-  background-color: #303030;
-  color: white;
+  margin-left: .2em;
 }
 
-.arrow_button:hover:before {
+/*.arrow_button:hover:before {
   border:25px solid #303030;
   border-left-color: transparent;
 }
@@ -160,4 +165,4 @@ a{
 .arrow_button:hover:after {
   border: 25px solid transparent;
   border-left-color: #303030;
-}
+}*/

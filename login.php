@@ -2,20 +2,33 @@
 	ini_set('error_reporting', E_ALL);
 	error_reporting(-1);
 	
+	//Establish missing and errors containers
+	
 	$missing = array();
 	$errors = array();
 	
+	//Checks if form was submitted
+	
 	if ($_POST) {
+	
+		//Sets username and password variables for future use
 	
 		$username = $_POST['username'];
 		$password = $_POST['password'];
+		
+		//Checks if username was set
 	
 		if ($_POST['username']) {
+		
+			//Converts First Last to firstlast
 			
 			$username = str_replace(" ", "", $username);
 			$username = strtolower($username);
 						
 		} else {
+		
+			//If no username entered, 
+			
 			array_push($missing, 'username');
 		}
 		
