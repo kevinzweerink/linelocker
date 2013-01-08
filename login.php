@@ -27,26 +27,43 @@
 						
 		} else {
 		
-			//If no username entered, 
+			//If no username entered, add username to the missing array
 			
 			array_push($missing, 'username');
 		}
 		
 		if ($_POST['password']) {
 		
+			//encrypt password
+		
 			$password = sha1($_POST['password']);
 			
 		} else {
+		
+			//if no password, add password to missing array
+		
 			array_push($missing, 'password');
+			
+			
 		}
-	
-		if (!$missing) {
+		
+		if (!$missing && !errors) {
+		
+			//connect to db
+					
 			require_once('lib/includes/db_connect.inc.php');
 			if ($connection) { 
+			
+				//PDO nonsense to check against db
+				
 		        $stmt = $connection->prepare("SELECT * FROM users WHERE username=:username AND password=:pword");
 		        $stmt->bindParam(':username',$username);
 		        $stmt->bindParam(':pword',$password);
 		        $stmt->execute();
+		        
+		        //If PDO statement returns a result start a session and set the session cookie
+		        //then redirect to index.php which won't redirect back to login.php
+		        //if the session cookie is set.
 		        
 		        if ($stmt->rowCount() > 0) {
 		        	$lifetime = 60 * 60 * 24;
