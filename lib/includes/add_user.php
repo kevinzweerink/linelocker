@@ -3,6 +3,8 @@
 //ini_set('display_errors',1); 
 //error_reporting(E_ALL);
 
+//Checks the email
+
 function validEmail($email) {
 	$regex = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
 	if (preg_match($regex, $email)) {
@@ -12,12 +14,16 @@ function validEmail($email) {
 	}
 }
 
+//If form has been submitted
 
 if ($_POST) {
 
-	$missing = [];
-	$errors = [];
+	//Establish missing and errors containers
+
+	$missing = array();
+	$errors = array();
 	
+	//Check required fields, validate, and push errors and missing to arrays.
 	
 	if (!$_POST['first_name']) {
 		array_push($missing, "First Name");
@@ -53,6 +59,8 @@ if ($_POST) {
 		
 	}
 	
+	//Set easier name variables
+	
 	$first_name = (isset($_POST['first_name'])) ? $_POST['first_name'] : '';
 	$last_name = (isset($_POST['last_name'])) ? $_POST['last_name'] : '';
 	$username = strtolower($first_name).strtolower($last_name);
@@ -62,6 +70,8 @@ if ($_POST) {
 	$country = (isset($_POST['country'])) ? $_POST['country'] : '';
 	$state_province = (isset($_POST['state_province'])) ? $_POST['state_province'] : '';
 	$city = (isset($_POST['city'])) ? $_POST['city'] : '';
+	
+	//If all is clear, go ahead and add to database
 	
 	if (!$missing && !$errors) {
 		require_once('db_connect.inc.php');
@@ -78,6 +88,9 @@ VALUES ('$first_name', '$last_name', '$username', '$password', '$experience', '$
 <div class="sign_up_form">
 
 <?php
+
+	//Spits out missing and errors
+	
 	if (!empty($missing)) {
 		echo "<p>Please fill out the fields for: ";
 			foreach ($missing as $item) {
