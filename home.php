@@ -13,8 +13,17 @@
 
 <body>
     <div class="wrapper">
-        <img src="assets/home_logo.png">
-	    <h1 class="header">linelocker</h1>
+        <header>
+	    <img src="assets/home_logo.png">
+	    <h1>linelocker</h1>
+	    <form>
+		<input type="text" name="search" placeholder="Search">
+		<a href="browse_by.php">Browse By</a>
+		<a href="new_line.php">Make Line</a>
+		<a href=""
+		
+	    </form>	
+	</header>
     </div> <!-- wrapper -->
 </body>
 </html>
