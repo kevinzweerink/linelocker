@@ -110,19 +110,19 @@ VALUES ('$first_name', '$last_name', '$username', '$password', '$experience', '$
 <form method="post">
 
 	<label for="first_name">First Name:</label>
-	<input type="text" name="first_name" placeholder="First" class="required" value="<?php echo $first_name ?>">
+	<input type="text" name="first_name" placeholder="First" class="required" value="<?php echo $first_name ?>" required>
 	
 	<label for="last_name">Last Name:</label>
-	<input type="text" name="last_name" placeholder="Last" class="required" value="<?php echo $last_name ?>">
+	<input type="text" name="last_name" placeholder="Last" class="required" value="<?php echo $last_name ?>" required>
 	
 	<label for="email">E-mail:</label>
-	<input type="email" name="email" placeholder="E-mail" class="required" value="<?php echo $email ?>">
+	<input type="email" name="email" placeholder="E-mail" class="required" value="<?php echo $email ?>" required>
 	
 	<label for="password">Password:</label>
-	<input type="password" name="password" placeholder="Password" class="required">
+	<input type="password" name="password" placeholder="Password" class="required" required>
 	
 	<label for="password">Confirm Password:</label>
-	<input type="password" name="confirm_password" placeholder="Confirm Password" class="required">
+	<input type="password" name="confirm_password" placeholder="Confirm Password" class="required" required>
 	
 	<label for="experience">Experience:</label>
 	<select name="experience" class="required">
