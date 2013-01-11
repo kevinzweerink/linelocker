@@ -3,6 +3,36 @@ body {
 	font-family: "ff-meta-web-pro", helvetica, arial, sans-serif;
 }
 
+
+.wrapper{
+	position: relative;
+	margin-top: 5em;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+header .header_buttons{
+	margin-left: 60%;
+	display: block;
+	padding: 0em 0em 1em 0em;
+}
+
+.line{
+	position: relative;
+	float: left;
+	width: 20%;
+	height: 17em;
+	border: 2px solid #303030;
+	border-radius: 2.5px;
+	margin-right: 2em;
+	margin-bottom: 2em;
+}
+
+
+/*----- h1, h2, h3, h4, etc... -----*/
+
 h1{
 	font-family: "din-condensed-web", helvetica, arial, sans-serif;
 	font-weight: normal;
@@ -13,13 +43,32 @@ h1{
 	margin: 0em;
 }
 
-.wrapper{
-	position: relative;
-	margin-top: 5em;
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
-	
+header h1{
+	font-family: "din-condensed-web", helvetica, arial, sans-serif;
+	font-weight: normal;
+	font-size: 2.5em;
+	text-transform: uppercase;
+	color: #303030;
+	margin: 0em;
+	padding-left: .2em;
+	padding-top: .2em;
+	float: left;
+}
+
+/*----- headers -----*/
+
+header{
+	width: 100%;
+	margin-top: 2em;
+	padding-bottom: .5em;
+	border-bottom: 2px solid #303030;
+}
+
+.line_header{
+	width: 100%;
+	background-color: #303030;
+	padding-top: .01em;
+	padding-bottom: .01em;
 }
 
 /*----- containers -----*/
@@ -37,7 +86,28 @@ h1{
 	padding-left: 2em;
 }
 
+.line_container{
+	width: 100%;
+	margin: 2.5em auto;
+}
 /*----- forms -----*/
+
+header form{
+	padding-top: .18em;
+	margin: 0;
+	width: 25%;
+	display: block;
+	margin-left: 30%;
+	
+}
+
+header input[type="text"]{
+	width: 100%;
+	font-family: "ff-meta-web-pro", helvetica, arial, sans-serif;
+	font-size: 1.2em;
+	padding: .1em .3em;
+	
+}
 
 input[type="text"], input[type="password"]{
 	width: 80%;
@@ -46,7 +116,7 @@ input[type="text"], input[type="password"]{
 	font-family: "ff-meta-web-pro", helvetica, arial, sans-serif;
 	color: #303030;
 	font-size: 1.5em;
-	padding: .3em .3em ;
+	padding: .3em;
 }
 
 input[type="submit"]{
@@ -75,6 +145,14 @@ input[type="submit"]:hover{
 	width: 25%;
 }
 
+header a img{
+	display: block;
+	float: left;
+}
+
+.carabiner{
+	height: 2.5em;
+}
 /*----- paragraphs -----*/
 
 .info_container p{
@@ -84,12 +162,64 @@ input[type="submit"]:hover{
 	margin: 3em auto 1em auto;
 }
 
+.line p{
+	padding: 0em 1em;
+}
+
+/*----- lists -----*/
+
+.line_header ul{
+	width: 10em;
+	margin-left: -1.5em;
+}
+
+.line_header li{
+	list-style: none;
+	color: white;
+	font-family: "ff-meta-web-pro", helvetica, arial, sans-serif;
+	font-size: 1em;
+	text-transform: uppercase;
+	margin-left: 0;
+}
+
 /*----- links -----*/
 
 a{
 	text-decoration: none;
 	color: #303030;
 }
+
+
+header .header_buttons a{
+	text-decoration: none;
+	color: #303030;
+	font-size: 1.15em;
+	background-color: #f2f3f4;
+	border: 2px solid #303030;
+	padding: .01em .4em;
+	margin: 0 .4;
+	border-radius: 5px;
+}
+
+header .header_buttons .browse {
+	text-decoration: none;
+	color: white;
+	font-size: 1.15em;
+	background-color: #303030;
+	border: 2px solid #303030;
+	padding: .01em .4em;
+	margin: 0 .4;
+	border-radius: 5px;
+}
+
+header .homepage_link{
+	display: block;
+	float: left;
+	padding-bottom: 1em;
+	padding-right: 2em;
+	background-color: none;
+}
+
 
 /*.info_container a{
 	background-color: white;
