@@ -66,7 +66,6 @@ header h1{
 
 header{
 	width: 100%;
-	margin-top: 2em;
 	padding-bottom: 0em;
 	border-bottom: 2px solid #303030;
 	overflow: hidden;
@@ -223,14 +222,21 @@ header .header_buttons a{
 
 header .header_buttons .browse {
 	text-decoration: none;
-	color: white;
 	font-size: 1.15em;
-	background-color: #303030;
-	border: 2px solid #303030;
+	background-color: #ccc;
+	color: #303030;
+	border: 2px solid #ccc;
 	padding: .01em .4em;
-	margin: 0 .4;
+	margin: 0 .25em;
 	border-radius: 5px;
 }
+
+header .header_buttons .browse:hover {
+	background-color: #303030;
+	color: white;
+	border-color: #303030;
+}
+
 
 header .homepage_link{
 	display: inline-block;
@@ -239,17 +245,6 @@ header .homepage_link{
 	padding-right: 2em;
 	background-color: none;
 }
-
-
-/*.info_container a{
-	background-color: white;
-	padding: .1em .7em;
-	width: 40%;
-	font-size: 2em;
-	display: block;
-	margin: auto;
-	margin-top: .5em;
-}*/
 
 .info_container a {
 	padding: 0 .7em;
