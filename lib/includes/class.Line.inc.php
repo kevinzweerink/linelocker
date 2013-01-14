@@ -18,7 +18,7 @@ class Line {
 	private $time;
 	private $message;
 	
-	private $db = new Database();
+	private $db;
 	
 	public function __construct($city, $state, $length, $type, $width, $creator, $users, $equipment_accounted, $equipment_needed, $date, $time, $message) {
 		$this->city                = $city;
@@ -33,7 +33,8 @@ class Line {
 		$this->date                = $date;
 		$this->time                = $time;
 		$this->message             = $message;
-		
+		$this->db 		   = new Database();
+	
 	}
 	
 	public function create_line() {
