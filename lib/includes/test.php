@@ -4,7 +4,7 @@ require_once 'class.Line.inc.php';
 
 $city = "Richmond";
 $state = "Virginia";
-$length = 50;
+$length = '50';
 $type = "Standard";
 $width = "1 inch";
 $creator = "Kevin Zweerink";
