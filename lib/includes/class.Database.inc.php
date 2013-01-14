@@ -12,6 +12,7 @@ class Database {
 		
 		$this->connection = new mysqli($this->host, $this->user, $this->password, $this->db);
 		$this->connection->query($query);
+		$this->connection->close();
 		
 	}
 
