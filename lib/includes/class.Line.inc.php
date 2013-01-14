@@ -5,17 +5,20 @@ require_once 'class.Database.inc.php'
 
 class Line {
 	
-	private $location;
+	private $city;
+	private $state;
 	private $length;
 	private $type;
 	private $width;
+	private $creator;
 	private $users;
 	private $equipment_accounted;
 	private $equipment_needed;
 	private $date;
 	private $time;
+	private $message;
 	
-	public function __construct($location, $length, $type, $width, $users, $equipment_accounted, $equipment_needed) {
+	public function __construct($city, $state, $length, $type, $width, $creator, $users, $equipment_accounted, $equipment_needed, $message,) {
 		$this->location            = $location;
 		$this->length              = $length;
 		$this->type                = $type;
