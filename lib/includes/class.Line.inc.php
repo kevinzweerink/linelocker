@@ -40,7 +40,7 @@ class Line {
 	
 	public function create_line() {
 	
-		$this->sql = "INSERT INTO line (city, state_province, length, type, width, creator, users, equipment_accounted, equipment_needed, date, time, message) VALUES ('".$this->city."', '".$this->state."', '".$this->length."', '".$this->type."', '".$this->width."', '".$this->creator."', '".$this->users."', '".$this->equipment_accounted."', '".$this->equipment_needed."', '".this->date."', '".this->time."', '".$this->message."')";
+		$this->sql = "INSERT INTO line (city, state_province, length, type, width, creator, users, equipment_accounted, equipment_needed, date, time, message) VALUES ('$this->city', '$this->state', '$this->length', '$this->type', '$this->width', '$this->creator', '$this->users', '$this->equipment_accounted', '$this->equipment_needed', '$this->date', '$this->time', '$this->message')";
 		
 		$this->db->execute_sql($this->sql);
 				
