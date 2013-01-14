@@ -1,10 +1,6 @@
 <?php
 
-echo "2";
-
-include ('class.SqlFormatter.inc.php');
-
-echo "3";
+include_once 'class.SqlFormatter.inc.php';
 
 class Database {
 

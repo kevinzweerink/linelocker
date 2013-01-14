@@ -72,7 +72,7 @@ class SqlFormatter {
 		if ($operation == 'insert') {
 			$this->insert($table, $columns, $values);
 		} elseif ($operation == 'select') {
-			$this->sql = "No support yet for select query, add it."
+			$this->sql = "No support yet for select query, add it.";
 		} else {
 			$this->sql = "No support for your operation type, add it to the SQLFormatter class";
 		}
