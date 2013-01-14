@@ -11,6 +11,7 @@ class Spot{
     private $review;
     private $creator;
     private $user;
+    
     private $average_rating;
     private $db;
     
@@ -23,8 +24,10 @@ class Spot{
         $this->location = $location;
         $this->rating   = $rating;
         $this->review   = $review;
+        $this->creator 	= $creator;
         $this->user     = $user;
         $this->db       = new Database();
+        
     }
     
     private function average_rating() {
@@ -32,7 +35,7 @@ class Spot{
     }
     
     public function create_spot() {
-        $this->sql = "INSERT INTO spot (city, state, location, rating, review, creator, user) VALUES ('$this->city', '$this->state', '$this->location', '$this->rating', '$this->review', '$this->creator', '$this->user')";
+        $this->sql = "INSERT INTO spot (city, state_province, location, rating, review, creator, user) VALUES ('$this->city', '$this->state', '$this->location', '$this->rating', '$this->review', '$this->creator', '$this->user')";
         $this->db->execute_sql($this->sql);
     }
         

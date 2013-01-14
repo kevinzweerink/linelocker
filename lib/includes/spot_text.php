@@ -9,6 +9,6 @@ $review = "this is a nice place.";
 $creator = "Brannon Dorsey";
 $user = "Kevin Zweerink";
 
-$Spot = new Spot();
-$Spot->create_spot($city, $state, $location, $rating, $review, $creator, $user);
+$Spot = new Spot($city, $state, $location, $rating, $review, $creator, $user);
+$Spot->create_spot();
 ?>
