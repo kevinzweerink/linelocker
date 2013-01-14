@@ -18,19 +18,29 @@ class Line {
 	private $time;
 	private $message;
 	
-	public function __construct($city, $state, $length, $type, $width, $creator, $users, $equipment_accounted, $equipment_needed, $message,) {
-		$this->location            = $location;
+	private $db = new Database();
+	
+	public function __construct($city, $state, $length, $type, $width, $creator, $users, $equipment_accounted, $equipment_needed, $date, $time, $message) {
+		$this->city                = $city;
+		$this->state               = $state;
 		$this->length              = $length;
 		$this->type                = $type;
 		$this->width               = $width;
+		$this->creator             = $creator;
 		$this->users               = $users;
 		$this->equipment_accounted = $equipment_accounted;
 		$this->equipment_needed    = $equipment_needed;
+		$this->date                = $date;
+		$this->time                = $time;
+		$this->message             = $message;
+		
 	}
 	
 	public function create_line() {
 	
-		//Uses Database class (unfinished) to add the line to the database
+		$sql = "INSERT INTO line (city, state, length, type, width, creator, users, equipment_accounted, equipment_needed, date, time, message) VALUES ('$city', '$state', '$length', '$type', '$width', '$creator', '$users', '$equipment_accounted', '$equipment_needed', '$message')";
+		$this->db->execute_sql($sql);
+		
 			
 	}
 	
@@ -45,14 +55,7 @@ class Line {
 		//Takes a line that is past expiration date and adds it to the spots table,
 		//also removes it from the lines table
 		
-	}
-
-	
-	
-	
-	
-	
-	
+	}	
 	
 }
 

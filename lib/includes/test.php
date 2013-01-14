@@ -1,12 +1,24 @@
 <?php
 
-include_once 'class.Database.inc.php';
+require_once 'class.Line.inc.php';
 
-$db = new Database();
-$sql = "INSERT into users (first_name, last_name, username, password, city, email, state_province, country, experience) VALUES ('test', 'test', 'test', 'testing', 'test', 'test', 'test', 'test', 'test')";
+/*$city = "Richmond";
+$state = "Virginia";
+$length = "50 ft";
+$type = "Standard";
+$width = "1 inch";
+$creator = "Kevin Zweerink";
+$users = "This guy";
+$equipment_accounted = "Everything necessary";
+$equipment needed = "none";
+$date = CURDATE();
+$time = CURTIME();
+$message = "loser";
 
-echo $sql;
-$db->execute_sql($sql);
+$line = new Line($city, $state, $length, $type, $width, $creator, $users, $equipment_accounted, $equipment_needed, $date, $time, $message);
+$line->create_line();*/
+
+
 
 
 
