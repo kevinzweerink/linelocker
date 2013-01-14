@@ -7,6 +7,7 @@ class Line {
 	
 	private $city;
 	private $state;
+	private $location;
 	private $length;
 	private $type;
 	private $width;
@@ -21,9 +22,10 @@ class Line {
 	
 	private $db;
 	
-	public function __construct($city, $state, $length, $type, $width, $creator, $users, $equipment_accounted, $equipment_needed, $date, $time, $message) {
+	public function __construct($city, $state, $location, $length, $type, $width, $creator, $users, $equipment_accounted, $equipment_needed, $date, $time, $message) {
 		$this->city                = $city;
 		$this->state               = $state;
+		$this->location            = $location;
 		$this->length              = $length;
 		$this->type                = $type;
 		$this->width               = $width;
@@ -40,7 +42,7 @@ class Line {
 	
 	public function create_line() {
 	
-		$this->sql = "INSERT INTO line (city, state_province, length, type, width, creator, users, equipment_accounted, equipment_needed, date, time, message) VALUES ('$this->city', '$this->state', '$this->length', '$this->type', '$this->width', '$this->creator', '$this->users', '$this->equipment_accounted', '$this->equipment_needed', '$this->date', '$this->time', '$this->message')";
+		$this->sql = "INSERT INTO line (city, state_province, location, length, type, width, creator, users, equipment_accounted, equipment_needed, date, time, message) VALUES ('$this->city', '$this->state', '$this->location', '$this->length', '$this->type', '$this->width', '$this->creator', '$this->users', '$this->equipment_accounted', '$this->equipment_needed', '$this->date', '$this->time', '$this->message')";
 		
 		$this->db->execute_sql($this->sql);
 				

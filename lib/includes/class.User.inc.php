@@ -2,7 +2,7 @@
 
 require_once 'class.Database.inc.php';
 
-class User{
+class User {
     private $first_name;
     private $last_name;
     private $username;
@@ -17,20 +17,31 @@ class User{
     
     private $display_name;
     
-    public function __construct ($first_name, $last_name, $username, $password, $id,
-                                 $email, $experience, $equipment, $city, $state, $country){
+    private $db;
+    private $sql;
+    
+    public function __construct ($first_name, $last_name, $username, $password, $email, $experience, $equipment=NULL, $city, $state, $country) {
         $this->first_name   = $first_name;
         $this->last_name    = $last_name;
         $this->username     = $username;
         $this->password     = $password;
-        $this->id           = $id;
         $this->email        = $email;
+        $this->experience   = $experience;
+        $this->equipment    = $equipment;
+        $this->city         = $city;
         $this->state        = $state;
         $this->country      = $country;
+        
         $this->display_name = ucfirst($first_name)." ".ucfirst($last_name);
+        $this->db           = new Database();
     }
     
     public function create_user() {
+    
+    	$this->sql = "INSERT INTO users (first_name, last_name, username, password, email, experience, equipment, city, state_province, country) VALUES ('$this->first_name', '$this->last_name', '$this->username', '$this->password', '$this->email', '$this->experience', '$this->equipment', '$this->city', '$this->state', '$this->country')";
+		
+		$this->db->execute_sql($this->sql);
+    	
         
     }
     

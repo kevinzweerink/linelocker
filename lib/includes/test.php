@@ -1,22 +1,21 @@
 <?php
 
-require_once 'class.Line.inc.php';
+require_once 'class.User.inc.php';
 
+$first_name = "Kevin";
+$last_name = "Zweerink";
+$username = "kevinzweerink";
+$password = "secretpassword";
+$email = "kevinzweerink@kevinzweerink.com";
+$experience = "Intermediate";
+$equipment = "Nothing";
 $city = "Richmond";
-$state = "Virginia";
-$length = '50';
-$type = "Standard";
-$width = "1 inch";
-$creator = "Kevin Zweerink";
-$users = "This guy";
-$equipment_accounted = "Everything necessary";
-$equipment_needed = "none";
-$date = "Yesterday";
-$time = "now";
-$message = "loser";
+$state = "VA";
+$country = "United States";
 
-$line = new Line($city, $state, $length, $type, $width, $creator, $users, $equipment_accounted, $equipment_needed, $date, $time, $message);
-$line->create_line();
+
+$user = new User($first_name, $last_name, $username, $password, $email, $experience, $equipment, $city, $state, $country);
+$user->create_user();
 
 
 
