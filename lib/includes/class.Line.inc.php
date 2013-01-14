@@ -17,6 +17,7 @@ class Line {
 	private $date;
 	private $time;
 	private $message;
+	private $sql;
 	
 	private $db;
 	
@@ -39,10 +40,9 @@ class Line {
 	
 	public function create_line() {
 	
-		$sql = "INSERT INTO line (city, state_province, length, type, width, creator, users, equipment_accounted, equipment_needed, date, time, message) VALUES ($this->city, $this->state, $this->length, $this->type, $this->width, $this->creator, $this->users, $this->equipment_accounted, $this->equipment_needed, $this->message)";
-		$this->db->execute_sql($sql);
-		
-			
+		$this->sql = "INSERT INTO line (city, state_province, length, type, width, creator, users, equipment_accounted, equipment_needed, date, time, message) VALUES ($this->city, $this->state, $this->length, $this->type, $this->width, $this->creator, $this->users, $this->equipment_accounted, $this->equipment_needed, $this->message)";
+		$this->db->execute_sql($this->sql);
+				
 	}
 	
 	public function edit_line() {
