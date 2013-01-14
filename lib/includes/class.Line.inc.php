@@ -1,6 +1,6 @@
 <?php
 
-require_once 'class.Database.inc.php'
+require_once 'class.Database.inc.php';
 
 
 class Line {
