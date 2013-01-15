@@ -11,14 +11,12 @@ class Spot{
     private $review;
     private $creator;
     private $user;
+    private $id;
     
     private $average_rating;
     private $db;
     
-    
-    
-    
-    public function __construct($city, $state, $location, $rating, $review, $creator, $user){
+    public function __construct($city, $state, $location, $rating, $review, $creator, $user, $id){
         $this->city     = $city;
         $this->state    = $state;
         $this->location = $location;
@@ -26,12 +24,24 @@ class Spot{
         $this->review   = $review;
         $this->creator 	= $creator;
         $this->user     = $user;
+        $this->id       = $id;
         $this->db       = new Database();
         
     }
     
     private function average_rating() {
         
+        $this->sql = "SELECT rating FROM spot WHERE id='$this->id'";
+        $this->db->execute_sql($this->sql);
+        $this->fetch = fetch_assoc($this->sql);
+        
+        
+        $this->all_ratings = explode(' ', $this->ratings_string){
+            
+        }
+        foreach (){
+            
+        }
     }
     
     public function create_spot() {
@@ -47,8 +57,9 @@ class Spot{
         $this->average_rating();
     }
     
-    public function display_spot() {
-        
+    public function display_spot($request) {
+       $this->sql = "SELECT $request FROM spot WHERE id='$this->id'";
+       $this->db->execute_sql($this->sql);
     }
     
    
