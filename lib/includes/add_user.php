@@ -1,5 +1,5 @@
 <?php 
-
+/*
 //ini_set('display_errors',1); 
 //error_reporting(E_ALL);
 
@@ -82,6 +82,17 @@ VALUES ('$first_name', '$last_name', '$username', '$password', '$experience', '$
 		$connection->commit();
 	}
 }
+*/
+
+
+//NEW OO STYLE STUFF
+require_once 'class.User.inc.php';
+
+if ($_POST) {
+	$user = new User ($_POST['first_name'], $_POST['last_name'], $_POST['username'], $_POST['password'], $_POST['confirm_password'], $_POST['email'], $_POST['experience'], $_POST['equipment'], $_POST['city'], $_POST['state_province'], $_POST['country']);
+	$user->prep_user_info();
+	$message = $user->create_user();
+}
 
 ?>
 
@@ -91,32 +102,20 @@ VALUES ('$first_name', '$last_name', '$username', '$password', '$experience', '$
 
 	//Spits out missing and errors
 	
-	if (!empty($missing)) {
-		echo "<p>Please fill out the fields for: ";
-			foreach ($missing as $item) {
-				echo $item;
-				echo ", ";
-			}
-		echo "</p>";
-	}
+	echo $message;
 	
-	foreach ($errors as $message) {
-		echo "<p>";
-		echo $message;
-		echo "</p>";
-	}
 ?>
 
 <form method="post">
 
 	<label for="first_name">First Name:</label>
-	<input type="text" name="first_name" placeholder="First" class="required" value="<?php echo $first_name ?>" required>
+	<input type="text" name="first_name" placeholder="First" class="required" value="<?php $user->display('first_name'); ?>" required>
 	
 	<label for="last_name">Last Name:</label>
-	<input type="text" name="last_name" placeholder="Last" class="required" value="<?php echo $last_name ?>" required>
+	<input type="text" name="last_name" placeholder="Last" class="required" value="<?php $user->display('last_name');?>" required>
 	
 	<label for="email">E-mail:</label>
-	<input type="email" name="email" placeholder="E-mail" class="required" value="<?php echo $email ?>" required>
+	<input type="email" name="email" placeholder="E-mail" class="required" value="<?php $user->display('email'); ?>" required>
 	
 	<label for="password">Password:</label>
 	<input type="password" name="password" placeholder="Password" class="required" required>
@@ -134,10 +133,10 @@ VALUES ('$first_name', '$last_name', '$username', '$password', '$experience', '$
 	</select>
 	
 	<label for="city">City:</label>
-	<input type="text" name="city" placeholder="city">
+	<input type="text" name="city" placeholder="city" value="<?php $user->display('city'); ?>">
 	
 	<label for="state_province">State/Province:</label>
-	<input type="text" name="state_province" placeholder="State/Province">
+	<input type="text" name="state_province" placeholder="State/Province" value="<?php $user->display('state'); ?>">
 	
 	<label for="country">Country:</label>
 	<?php require_once("countries.inc.php") ?>

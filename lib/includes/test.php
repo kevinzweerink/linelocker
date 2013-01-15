@@ -22,4 +22,3 @@ $user->create_user();
 ?>
 
 hello
-
