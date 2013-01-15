@@ -10,13 +10,13 @@ class Spot extends Line{
     private $average_rating;
     
     public function __construct($city, $state, $location, $rating, $review, $creator, $user){
-        $this->city     = $city;
-        $this->state    = $state;
-        $this->location = $location;
-        $this->rating   = $rating;
-        $this->review   = $review;
-        $this->creator 	= $creator;
-        $this->user     = $user;
+        parent::$this->city     = $city;
+        parent::$this->state    = $state;
+        parent::$this->location = $location;
+        $this->rating           = $rating;
+        $this->review           = $review;
+        parent::$this->creator 	= $creator;
+        parent::$this->user     = $user;
     }
     
     private function average_rating() {
@@ -28,10 +28,14 @@ class Spot extends Line{
         $this->db->execute_sql($this->sql);
     }
         
-    public function review_spot() {
+    public function rate_review_spot($r) {
+        //rate and or review spot
+        $this->sql = "INSERT INTO spot $r VALUES '$this->$r'";
+        $this->db->execute_sql($this->sql);
         
         $this->average_rating();
     }
+
     
     public function display_spot() {
         
