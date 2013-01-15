@@ -1,6 +1,6 @@
 <?php
 
-require_once 'class.User.inc.php';
+/*require_once 'class.User.inc.php';
 
 $first_name = "Kevin";
 $last_name = "Zweerink";
@@ -15,7 +15,15 @@ $country = "United States";
 
 
 $user = new User($first_name, $last_name, $username, $password, $email, $experience, $equipment, $city, $state, $country);
-$user->create_user();
+$user->create_user();*/
+
+require_once 'class.Database.inc.php';
+
+$statement = "SELECT first_name FROM users WHERE last_name='Zweerink'";
+
+$connection = new Database();
+$connection->execute_sql($statement);
+var_dump($connection->result);
 
 
 
