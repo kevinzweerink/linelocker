@@ -1,22 +1,13 @@
 <?php
 
 require_once 'class.Database.inc.php';
+require_once 'class.Line.inc.php';
 
-class Spot{
+class Spot extends Line{
     
-    private $city;
-    private $state;
-    private $location;
     private $rating;
     private $review;
-    private $creator;
-    private $user;
-    
     private $average_rating;
-    private $db;
-    
-    
-    
     
     public function __construct($city, $state, $location, $rating, $review, $creator, $user){
         $this->city     = $city;
@@ -26,8 +17,6 @@ class Spot{
         $this->review   = $review;
         $this->creator 	= $creator;
         $this->user     = $user;
-        $this->db       = new Database();
-        
     }
     
     private function average_rating() {
@@ -47,8 +36,6 @@ class Spot{
     public function display_spot() {
         
     }
-    
-   
 }
 ?>
 
