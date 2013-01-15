@@ -23,7 +23,8 @@ $statement = "SELECT first_name FROM users WHERE last_name='Zweerink'";
 
 $connection = new Database();
 $connection->execute_sql($statement);
-var_dump($connection->result);
+$connection->return_result('first_name');
+
 
 
 
