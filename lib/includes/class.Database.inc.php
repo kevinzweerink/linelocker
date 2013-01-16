@@ -25,7 +25,7 @@ class Database {
 	}
 	
 	public function get_result($key) {
-		echo $this->result[$key];
+		return $this->result[$key];
 	}
 
 }

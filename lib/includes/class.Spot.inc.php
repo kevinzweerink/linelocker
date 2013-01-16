@@ -36,8 +36,8 @@ class Spot{
         
     }
     
-    private function average_rating() {
-        //function to average spot ratings using ratings column 
+    public function average_rating() {
+        //function to average spot ratings using ratings column
         
         $this->display_spot('rating');
         
@@ -52,8 +52,9 @@ class Spot{
         
         //UPDATE average_rating
         $this->average_rating = round(($this->total/$this->count));
+        echo $this->average_rating;
         $this->sql = "UPDATE spot SET average_rating='$this->average_rating' WHERE id='$this->id'";
-        $this->db->execute_sql($this->sql);        
+        $this->db->execute_sql($this->sql);    
     }
     
     public function create_spot() {
@@ -69,7 +70,7 @@ class Spot{
     
     public function display_spot($request) {
        $this->sql = "SELECT $request FROM spot WHERE id='$this->id'";
-       $this->db->execute_sql($this->sql);
+       $this->db->retrieve_sql($this->sql);
        $this->db->get_result($this->id);
        
     }
@@ -78,4 +79,3 @@ class Spot{
 }
 ?>
 
-hello
