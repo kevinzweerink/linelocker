@@ -37,7 +37,7 @@ $validate = new Validate;
     <textarea name="equipment_needed" placeholder="2 linelockers" cols="30" rows="5"></textarea>
     
     <label for="date">Date:</label>
-    <input type="date" name="date" class="required" value="">
+    <input type="date" name="date" class="required" placeholder="mm/dd/yyyy" value="">
     
     <label for="time">Time:</label>
     <input type="time" name="time" class="required" value="">
