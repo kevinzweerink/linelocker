@@ -1,5 +1,7 @@
 <?php
+
 require_once 'class.User.inc.php';
+
 class Validate{
    
     public function is_filled($input){
