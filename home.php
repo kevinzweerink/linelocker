@@ -1,3 +1,12 @@
+<?php
+
+require_once 'lib/includes/class.Search.inc.php';
+
+$user_location = 'Seattle';
+
+Search::search('line','city',$user_location);
+
+?>
 <!DOCTYPE html>
 
 <html>
@@ -45,94 +54,25 @@
 	</header>
 	
 	<div class="line_container">
+	
+		<?php 
+		foreach (Search::$search_results as $result) { ?>
 	    
+	    <a href="line.php?id=<?php echo $result['id'] ?>">
 	    <div class="line">
 		<div class="line_header">
 		    <ul>
-			<li>date: 1/3/13</li>
-			<li>time: 11am</li>
-			<li>place: byrd Park</li>
+			<li>Date: <?php echo $result['date']; ?></li>
+			<li>time: <?php echo $result['time']; ?></li>
+			<li>place: <?php echo $result['location']; ?></li>
 		    </ul>
 		</div> <!-- line_header -->
-		<p>This is the line description.</p>
+		<p><?php echo $result['message']; ?></p>
 	    </div> <!-- line -->
+	    </a>
 	    
-	    <div class="line">
-		<div class="line_header">
-		    <ul>
-			<li>date: 1/3/13</li>
-			<li>time: 11am</li>
-			<li>place: byrd Park</li>
-		    </ul>
-		</div> <!-- line_header -->
-		<p>This is the line description.</p>
-	    </div> <!-- line -->
-	    
-	    <div class="line">
-		<div class="line_header">
-		    <ul>
-			<li>date: 1/3/13</li>
-			<li>time: 11am</li>
-			<li>place: byrd Park</li>
-		    </ul>
-		</div> <!-- line_header -->
-		<p>This is the line description.</p>
-	    </div> <!-- line -->
-	    
-	    <div class="line">
-		<div class="line_header">
-		    <ul>
-			<li>date: 1/3/13</li>
-			<li>time: 11am</li>
-			<li>place: byrd Park</li>
-		    </ul>
-		</div> <!-- line_header -->
-		<p>This is the line description.</p>
-	    </div> <!-- line -->
-	    
-	    <div class="line">
-		<div class="line_header">
-		    <ul>
-			<li>date: 1/3/13</li>
-			<li>time: 11am</li>
-			<li>place: byrd Park</li>
-		    </ul>
-		</div> <!-- line_header -->
-		<p>This is the line description.</p>
-	    </div> <!-- line -->
-	    <div class="line">
-		<div class="line_header">
-		    <ul>
-			<li>date: 1/3/13</li>
-			<li>time: 11am</li>
-			<li>place: byrd Park</li>
-		    </ul>
-		</div> <!-- line_header -->
-		<p>This is the line description.</p>
-	    </div> <!-- line -->
-	    
-	    <div class="line">
-		<div class="line_header">
-		    <ul>
-			<li>date: 1/3/13</li>
-			<li>time: 11am</li>
-			<li>place: byrd Park</li>
-		    </ul>
-		</div> <!-- line_header -->
-		<p>This is the line description.</p>
-	    </div> <!-- line -->
-	    
-	    <div class="line">
-		<div class="line_header">
-		    <ul>
-			<li>date: 1/3/13</li>
-			<li>time: 11am</li>
-			<li>place: byrd Park</li>
-		    </ul>
-		</div> <!-- line_header -->
-		<p>This is the line description.</p>
-	    </div> <!-- line -->
-	    
+	    <?php } ?>
+	    	    
 	    
 	</div> <!-- line_container -->
     </div> <!-- wrapper -->

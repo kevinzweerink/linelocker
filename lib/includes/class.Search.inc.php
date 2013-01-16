@@ -17,13 +17,12 @@ class Search {
     //Find database info. Takes $type for line, user, spot etc, $filter for column and $key for value
     
     public static function search($table, $filter, $key){
-        self::$sql = "SELECT * FROM line WHERE city='Richmond'";
+        self::$sql = "SELECT * FROM $table WHERE $filter='$key'";
         self::$db = new Database();
         self::$search_results = self::$db->get_all_results(self::$sql);
         
-        var_dump(self::$search_results);
-        
     }
+    
 }
 ?>
 

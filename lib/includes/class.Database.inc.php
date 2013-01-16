@@ -7,6 +7,7 @@ class Database {
 	protected $db       = "linelocker";
 	protected $host     = "localhost";
 	protected $result;
+	protected $tmp_result;
 	protected $connection;
 	
 	public function execute_sql($query) {
@@ -29,15 +30,21 @@ class Database {
 	}
 	
 	public function get_all_results($query) {
+	
 		$this->connection = new mysqli($this->host, $this->user, $this->password, $this->db);
-		$i=0;
-		while ($result = $this->connection->query($query)->fetch_assoc()) {
-			$this->result[$i] = $result;
-			$i++;	
-		}
+		
+		if ($result = $this->connection->query($query)) {
+			$i=0;
+			while ($row = $result->fetch_assoc()) {
+				$this->result[$i] = $row;
+				$i++;	
+			}
+			
 		$this->connection->close();
 		
 		return $this->result;
+		
+		}
 		
 	}
 

@@ -23,12 +23,17 @@ require_once 'class.Search.inc.php';
 
 $user_location = "Richmond";
 
-Search::search('line','location',$user_location);
+Search::search('line','city',$user_location);
+
+foreach (Search::$search_results as $result) {
+	echo "<p>Line Creator: ";
+	echo $result['creator'];
+	echo "</p>";
+	
+}
 
 
 
 
 
 ?>
-
-hello
