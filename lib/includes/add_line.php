@@ -40,7 +40,7 @@ $validate = new Validate;
     <input type="date" name="date" class="required" placeholder="mm/dd/yyyy" value="">
     
     <label for="time">Time:</label>
-    <input type="time" name="time" class="required" value="">
+    <input type="time" name="time" class="required" placeholder="--:-- --" value="">
     
     <label for="message">Line Description:</label>
     <textarea name="message" placeholder="Come join us at Byrd Park! Anyone is welcome." cols="30" rows="5"></textarea>
