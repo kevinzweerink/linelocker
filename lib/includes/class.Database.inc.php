@@ -27,6 +27,19 @@ class Database {
 	public function get_result($key) {
 		return $this->result[$key];
 	}
+	
+	public function get_all_results($query) {
+		$this->connection = new mysqli($this->host, $this->user, $this->password, $this->db);
+		$i=0;
+		while ($result = $this->connection->query($query)->fetch_assoc()) {
+			$this->result[$i] = $result;
+			$i++;	
+		}
+		$this->connection->close();
+		
+		return $this->result;
+		
+	}
 
 }
 

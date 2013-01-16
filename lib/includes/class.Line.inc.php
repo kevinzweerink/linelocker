@@ -105,8 +105,6 @@ class Line {
 	public function create_line() {
 	
 		if ($this->line_info_ready) {
-		
-		echo "made it";
 	
 		$this->sql = "INSERT INTO line (city, state_province, location, length, type, width, creator, users, equipment_accounted, equipment_needed, date, time, message) VALUES ('$this->city', '$this->state', '$this->location', '$this->length', '$this->type', '$this->width', '$this->creator', '$this->users', '$this->equipment_accounted', '$this->equipment_needed', '$this->date', '$this->time', '$this->message')";
 		

@@ -17,13 +17,15 @@ $country = "United States";
 $user = new User($first_name, $last_name, $username, $password, $email, $experience, $equipment, $city, $state, $country);
 $user->create_user();*/
 
-require_once 'class.Database.inc.php';
+error_reporting(E_ALL);
 
-$statement = "SELECT first_name FROM users WHERE last_name='Zweerink'";
+require_once 'class.Search.inc.php';
 
-$connection = new Database();
-$connection->execute_sql($statement);
-$connection->return_result('first_name');
+$user_location = "Richmond";
+
+Search::search('line','location',$user_location);
+
+
 
 
 
