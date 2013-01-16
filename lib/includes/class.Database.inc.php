@@ -25,8 +25,10 @@ class Database {
 		
 	}
 	
-	public function get_result($key) {
+	public function get_result($key=NULL) {
+		
 		return $this->result[$key];
+		
 	}
 	
 	public function get_all_results($query) {
@@ -34,6 +36,7 @@ class Database {
 		$this->connection = new mysqli($this->host, $this->user, $this->password, $this->db);
 		
 		if ($result = $this->connection->query($query)) {
+		
 			$i=0;
 			while ($row = $result->fetch_assoc()) {
 				$this->result[$i] = $row;
@@ -42,7 +45,11 @@ class Database {
 			
 		$this->connection->close();
 		
-		return $this->result;
+			if (count($this->result) > 1) {
+				return $this->result;
+			} else {
+				return $this->result[0];
+			}
 		
 		}
 		

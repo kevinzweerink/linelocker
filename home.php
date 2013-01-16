@@ -2,7 +2,7 @@
 
 require_once 'lib/includes/class.Search.inc.php';
 
-$user_location = 'Seattle';
+$user_location = 'Richmond';
 
 Search::search('line','city',$user_location);
 
