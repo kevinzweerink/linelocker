@@ -27,7 +27,7 @@ class User {
     private $db;
     private $sql;
     
-    public function __construct ($first_name=NULL, $last_name=NULL, $username=NULL, $password=NULL, $confirm=NULL, $email=NULL, $experience=NULL, $equipment=NULL, $city=NULL, $state=NULL, $country=NULL) {
+    public function __construct ($first_name=NULL, $last_name=NULL, $password=NULL, $confirm=NULL, $email=NULL, $experience=NULL, $equipment=NULL, $city=NULL, $state=NULL, $country=NULL) {
         $this->first_name   = $first_name;
         $this->last_name    = $last_name;
         $this->username     = strtolower($first_name).strtolower($last_name);
@@ -51,6 +51,8 @@ class User {
 	    	$this->sql = "INSERT INTO users (first_name, last_name, username, password, email, experience, equipment, city, state_province, country) VALUES ('$this->first_name', '$this->last_name', '$this->username', '$this->password', '$this->email', '$this->experience', '$this->equipment', '$this->city', '$this->state', '$this->country')";
 			
 			$this->db->execute_sql($this->sql);
+			
+			return "Success";
 		
 		} else {
 		
@@ -83,37 +85,46 @@ class User {
     }
     
     public function prep_user_info() {
+    
 	    if (!$this->first_name) {
 	    	array_push($this->validation_missing, 'first name');
-	    } else if (!$this->last_name) {
+	    } 
+	    if (!$this->last_name) {
 	    	array_push($this->validation_missing, 'last name');
-	    } else if (!$this->password) {
+	    } 
+	    if (!$this->password) {
 	    	array_push($this->validation_missing, 'password');
-	    } else if ($this->password != $this->confirm) {
+	    } 
+	    if ($this->password !== $this->confirm) {
 		    array_push($this->validation_messages, "Passwords don't match.");
-	    } else if (!$this->email) {
+	    } 
+	    if (!$this->email) {
 		    array_push ($this->validation_missing, 'email');
-	    } else if (!preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/',$this->email) {
+	    } 
+	    if (!preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/',$this->email)) {
 		    array_push ($this->validation_messages, 'Please use a valid e-mail.');
-	    } else if (!$this->city) {
+	    } 
+	    if (!$this->city) {
 		    array_push ($this->validation_missing, 'city');
-	    } else if (!$this->state) {
+	    } 
+	    if (!$this->state) {
 		    array_push ($this->validation_missing, 'state');
-	    } else if (!$this->country) {
+	    } 
+	    if (!$this->country) {
 		    array_push($this->validation_missing, 'country');
 	    }
 	    
-	    if (empty($this->validation_missing) && empty($this->validation_errors)) {
-		   	$this->password = sha1($this->password);
-		   	$this->user_info_ready = TRUE;
+	    if (!empty($this->validation_missing) || !empty($this->validation_messages)) {
+		   	$this->format_messages();
 	    } else {
-		    $this->format_messages();
+		    $this->password = sha1($this->password);
+		   	$this->user_info_ready = TRUE;
 	    }
 	  
     }
     
     public function display($arg) {
-	    echo $this->.$arg;
+	    echo $this->$arg;
     }
     
     

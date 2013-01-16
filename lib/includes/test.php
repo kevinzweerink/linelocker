@@ -27,7 +27,6 @@ $connection->return_result('first_name');
 
 
 
-
 ?>
 
 hello
