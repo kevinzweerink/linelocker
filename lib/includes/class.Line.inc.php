@@ -27,7 +27,7 @@ class Line {
 	private $sql;
 	private $db;
 	
-	public function __construct($city=NULL, $state=NULL, $location=NULL, $length=NULL, $type=NULL, $width=NULL, $creator=NULL, $users=NULL, $equipment_accounted=NULL, $equipment_needed=NULL, $date=NULL, $time=NULL, $message=NULL) {
+	public function __construct($city=NULL, $state=NULL, $location=NULL, $length=NULL, $type=NULL, $width=NULL, $creator=NULL, $equipment_accounted=NULL, $equipment_needed=NULL, $date=NULL, $time=NULL, $message=NULL) {
 		$this->city                = $city;
 		$this->state               = $state;
 		$this->location            = $location;
@@ -35,7 +35,6 @@ class Line {
 		$this->type                = $type;
 		$this->width               = $width;
 		$this->creator             = $creator;
-		$this->users               = $users;
 		$this->equipment_accounted = $equipment_accounted;
 		$this->equipment_needed    = $equipment_needed;
 		$this->date                = $date;
@@ -47,28 +46,28 @@ class Line {
 	
 	public function format_messages() {
 		if (!empty($this->validation_missing)) {
-		    $this->message .= "<p>Please fill out the following fields:";
+		    $this->error_messages .= "<p>Please fill out the following fields:";
 		    foreach ($this->validation_missing as $missing) {
-			    $this->message .= " ".$missing;
+			    $this->error_messages .= " ".$missing;
 		    }
-		    $this->message .= ".</p>";
+		    $this->error_messages .= ".</p>";
 	    }
 	    if (!empty ($this->validation_messages)) {
 		    foreach ($this->validation_messages as $messages) {
-			    $this->message .= "<p>";
-			    $this->message .= $messages;
-			    $this->message .= "</p>";
+			    $this->error_messages .= "<p>";
+			    $this->error_messages .= $messages;
+			    $this->error_messages .= "</p>";
 		    }
 	    }
 	}
 	
-	public function prep_user_info() {
+	public function prep_line_info() {
     
 	    if (!$this->city) {
 	    	array_push($this->validation_missing, 'city');
 	    } 
 	    if (!$this->state) {
-	    	array_push($this->validation_missing, 'city');
+	    	array_push($this->validation_missing, 'state');
 	    } 
 	    if (!$this->location) {
 	    	array_push($this->validation_missing, 'location');
@@ -98,7 +97,7 @@ class Line {
 	    if (!empty($this->validation_missing) || !empty($this->validation_messages)) {
 		   	$this->format_messages();
 	    } else {
-		   	$this->user_info_ready = TRUE;
+		   	$this->line_info_ready = TRUE;
 	    }
 	  
     }
@@ -116,6 +115,10 @@ class Line {
 		}
 				
 	}
+	
+	public function display($arg) {
+	    echo $this->$arg;
+    }
 	
 	public function edit_line() {
 		
