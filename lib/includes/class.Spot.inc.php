@@ -14,7 +14,12 @@ class Spot{
     private $id;
     
     private $average_rating;
+    private $all_ratings;
     private $db;
+    private $sql;
+    private $count;
+    private $total;
+    
     
     public function __construct($city, $state, $location, $rating, $review, $creator, $user, $id){
         $this->city     = $city;
@@ -30,18 +35,25 @@ class Spot{
     }
     
     private function average_rating() {
+        //function to average spot ratings using ratings column 
+        
         
         $this->sql = "SELECT rating FROM spot WHERE id='$this->id'";
         $this->db->execute_sql($this->sql);
-        $this->fetch = fetch_assoc($this->sql);
         
+        //get result of ratings in associative array
+        $this->all_ratings = str_split($this->db->get_result('rating'),1);
         
-        $this->all_ratings = explode(' ', $this->ratings_string){
-            
+        //average associative rating array 
+        $this->count = count($this->all_ratings);
+        foreach ($this->all_ratings as $value){
+            $this->total = $this->total + $value; 
         }
-        foreach (){
-            
-        }
+        
+        //UPDATE average_rating
+        $this->average_rating = ($this->total/$this->count);
+        $this->sql = "UPDATE spot SET average_rating='$this->average_rating' WHERE id='$this->id'";
+        $this->db->execute_sql($this->sql);
     }
     
     public function create_spot() {
@@ -49,11 +61,9 @@ class Spot{
         $this->db->execute_sql($this->sql);
     }
  
-        public function rate_review_spot($r) {
-        
+    public function r_spot($r) {
         $this->sql = "INSERT INTO spot $r VALUES '$this->$r'";
         $this->db->execute_sql($this->sql);
-        
         $this->average_rating();
     }
     
