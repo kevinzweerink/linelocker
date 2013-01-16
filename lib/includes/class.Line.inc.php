@@ -121,7 +121,7 @@ class Line {
 	public function display($arg) {
 	    echo $this->$arg;
     }
-	
+    
 	public function edit_line() {
 		
 		//Uses Database class (unfinished) to change parameters of the line.
