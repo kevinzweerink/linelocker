@@ -51,7 +51,7 @@ class Spot{
         }
         
         //UPDATE average_rating
-        $this->average_rating = ($this->total/$this->count);
+        $this->average_rating = round(($this->total/$this->count));
         $this->sql = "UPDATE spot SET average_rating='$this->average_rating' WHERE id='$this->id'";
         $this->db->execute_sql($this->sql);        
     }
