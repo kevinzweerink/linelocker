@@ -20,7 +20,7 @@ if (!empty($_POST)) {
 		$_POST['equipment_needed'] ? $_POST['equipment_needed'] : NULL, 
 		$_POST['date'] ? $_POST['date'] : NULL, 
 		$_POST['time'] ? $_POST['time'] : NULL, 
-		$_POST['message'] ? $_POST['message'] : NULL, 
+		$_POST['message'] ? $_POST['message'] : NULL
 	);
 	$line->prep_line_info();
 	$message = $line->create_line();
