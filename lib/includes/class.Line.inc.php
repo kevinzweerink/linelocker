@@ -19,10 +19,10 @@ class Line {
 	private $time;
 	private $message;
 	
-	private $line_info_ready=NULL;
+	private $line_info_ready=FALSE;
 	private $error_messages;
-	private $validation_messages;
-	private $validation_missing;
+	private $validation_messages = array();
+	private $validation_missing = array();
 	
 	private $sql;
 	private $db;
@@ -75,7 +75,7 @@ class Line {
 	    if (!$this->length) {
 		    array_push ($this->validation_missing, 'length');
 	    } 
-	    if (!this->type) {
+	    if (!$this->type) {
 		    array_push ($this->validation_missing, 'type');
 	    } 
 	    if (!$this->width) {
@@ -94,7 +94,7 @@ class Line {
 		    array_push($this->validation_missing, 'message');
 	    }
 	    
-	    if (!empty($this->validation_missing) || !empty($this->validation_messages)) {
+	    if (!empty($this->validation_missing) || !empty($this->validation_errors)) {
 		   	$this->format_messages();
 	    } else {
 		   	$this->line_info_ready = TRUE;
@@ -105,13 +105,15 @@ class Line {
 	public function create_line() {
 	
 		if ($this->line_info_ready) {
+		
+		echo "made it";
 	
 		$this->sql = "INSERT INTO line (city, state_province, location, length, type, width, creator, users, equipment_accounted, equipment_needed, date, time, message) VALUES ('$this->city', '$this->state', '$this->location', '$this->length', '$this->type', '$this->width', '$this->creator', '$this->users', '$this->equipment_accounted', '$this->equipment_needed', '$this->date', '$this->time', '$this->message')";
 		
 		$this->db->execute_sql($this->sql);
 		
 		} else {
-			$this->format_messages();
+			return $this->error_messages;
 		}
 				
 	}
