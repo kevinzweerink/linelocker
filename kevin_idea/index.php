@@ -47,7 +47,7 @@
 			<h2>What can we get for you?</h2>
 			
 				<form method="post" action="" class="big_ol_search">
-					<input type="text" placeholder="Search" name="search">
+					<input type="text" placeholder="e.g. Longline Richmond" name="search">
 					<select name="search_by">
 						<option name="blank">Search For...</option>
 						<option name="lines">Lines</option>
