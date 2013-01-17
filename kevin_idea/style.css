@@ -293,6 +293,7 @@ h1 {
 	background-color: #fff;
 	padding-top: 1em;
 	margin-top: 60em;
+	border-top: 1px solid #eee;
 }
 
 .message_center h2 {
