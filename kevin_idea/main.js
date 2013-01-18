@@ -39,17 +39,27 @@ $(document).ready(function() {
 	var mastHeight = $('.mast_head').outerHeight();
 	$('.message_center').css('margin-top',mastHeight);
 	
-	$(document).scroll(function() {
+	$(window).scroll(function() {
 	
-		var position = $('body').scrollTop();
+		var position = $(window).scrollTop();
 		
-		if (position > mastHeight-100) {
-			$('header').css('top','0');
+		var headerHeight = $('header').outerHeight();
+		
+		console.log($(window).scrollTop());
+		
+		var startPos = (mastHeight - 300);
+		var target = (mastHeight - startPos);
+		var adjPos = (position + headerHeight);
+		
+		$('.mast_head').css('opacity', (1 - (position/(mastHeight-50))));
+		
+		if (adjPos <= (startPos-1)) {
+			$('header').css('top', '-100px');
+		} else if ((adjPos <= mastHeight) && (adjPos >= startPos)) {
+			$('header').css('top',('-' + ( 100 - ((adjPos - startPos)/3) ) + 'px'));
 		} else {
-			$('header').css('top','-100px');
+			$('header').css('top','0');
 		}
-		
-		$('.mast_head').css('opacity',1 - (position/(mastHeight-50)));
 		
 	});
 	

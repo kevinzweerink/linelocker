@@ -75,7 +75,7 @@ table {
 
 
 body {	
-	font-family: "proxima-nova", helvetica, arial, sans-serif;
+	font-family: "museo-sans", helvetica, arial, sans-serif;
 	font-size: 100%;
 	color: #303030;
 	
@@ -126,6 +126,11 @@ header {
 	width: 100%;
 	background-color: white;
 	z-index: 99999;
+	
+	-webkit-transition: top 0s ease;
+	-moz-transition: top 0s ease;
+	-o-transition: top 0s ease;
+	transition: top 0s ease;
 }
 
 .logo {
@@ -168,7 +173,7 @@ header .icon-logo {
 }
 
 .search input {
-	font-family: "proxima-nova", helvetica, arial, sans-serif;
+	font-family: "museo-sans", helvetica, arial, sans-serif;
 	padding: 5px;
 	color: #303030;
 	border: 1px solid #eee;
@@ -177,13 +182,14 @@ header .icon-logo {
 }
 
 .search select, .search option {
-	font-family: "proxima-nova", helvetica, arial, sans-serif;
+	font-family: "museo-sans", helvetica, arial, sans-serif;
 	padding: 5px 1em;
 	color: #303030;
 	border: 1px solid #eee;
 	font-size: 1em;
 	background-color: #eee;
 	-webkit-appearance: none;
+	-moz-appearance: none;
 	border-radius: 0;
 	font-weight: bold;
 	
@@ -248,7 +254,7 @@ h1 {
 
 .big_search input {
 	width: 100%;
-	font-family: "proxima-nova", sans-serif;
+	font-family: "museo-sans", sans-serif;
 	color: #303030;
 	outline: none;
 	border: 1px solid #ddd;
@@ -258,7 +264,7 @@ h1 {
 }
 
 .big_search select {
-	font-family: "proxima-nova", helvetica, arial, sans-serif;
+	font-family: "museo-sans", helvetica, arial, sans-serif;
 	padding: .5em;
 	display: block;
 	color: #fff;
@@ -266,6 +272,7 @@ h1 {
 	background-color: #303030;
 	outline: none;
 	-webkit-appearance: none;
+	-moz-appearance: none;
 	border-radius: 3px;
 	font-weight: bold;
 	width: 100%;

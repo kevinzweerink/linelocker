@@ -20,8 +20,7 @@
 			<div class="right">
 				<form method="post" action="" class="search">
 					<input type="text" placeholder="Search" name="search">
-					<select name="search_by">
-						<option name="blank">Search For...</option>
+					<select name="search_by" data-placeholder="Search For...">
 						<option name="lines">Lines</option>
 						<option name="people">People</option>
 						<option name="spots">Spots</option>
@@ -48,8 +47,8 @@
 			
 				<form method="post" action="" class="big_ol_search">
 					<input type="text" placeholder="e.g. Longline Richmond" name="search">
-					<select name="search_by">
-						<option name="blank">Search For...</option>
+					<select name="search_by" class="chosen_select" data-placeholder="Search For...">
+						<option name="">Search For...</option>
 						<option name="lines">Lines</option>
 						<option name="people">People</option>
 						<option name="spots">Spots</option>
@@ -291,7 +290,6 @@
 		</div>
 		</div>		
 	</footer>
-
 
 
 </body>
