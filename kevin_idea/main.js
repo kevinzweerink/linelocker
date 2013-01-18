@@ -28,10 +28,14 @@ $(document).ready(function() {
 	$('.notifier a').click(function(event) {
 		event.preventDefault();
 		if (toggle_switch == 0) {
-			$('.message').css({'height':'65px','padding':'1em 0','border-top':'1px solid #eee'});
+			$('.message').css({'height':'80px','padding':'1em 0','border-top':'1px solid #eee'});
+			$('.triangle').css({'transform':'rotate(90deg)','margin-top':'12px','margin-left':'-15px'});
+			$('.notifier').css('margin-left','15px');
 			toggle_switch = 1;
 		} else {
 			$('.message').css({'height':'0','padding':'0','border':'none'});
+			$('.triangle').css({'transform':'rotate(0deg)','margin-top':'2px','margin-left':'0'});
+			$('.notifier').css('margin-left','0px');
 			toggle_switch = 0;
 		}
 	})

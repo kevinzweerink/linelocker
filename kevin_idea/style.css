@@ -318,6 +318,19 @@ h1 {
 	margin-top: 1em;
 }
 
+.triangle {
+	content: '';
+	display:inline-block;
+	float: left;
+	width: 0;
+	height: 0;
+	border-left: 20px solid #4291cc;
+	border-right: 20px solid transparent;
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	margin-top: 2px;
+}
+
 .new_buttons {
 	float: right;
 }
@@ -369,20 +382,29 @@ h1 {
 	display: inline-block;
 	float: left;
 	font-size: 1.3em;
-	padding-top: .3em;
+	margin-bottom: 1em;
+	border-bottom: 2px solid #303030;
+	padding-bottom: .1em;
+	margin-top: .5em;
 }
 
 .message a {
-	display: inline-block;
-	float: right;
-	background-color: #4291cc;
-	border-radius: 3px;
-	padding: .6em 1em .5em 1em;
-	color: white;
+	overflow: visible;
 }
 
-.message a:hover {
-	background-color: #6eb5e0;
+.leader {
+	margin-top: 1em;
+	color: #bbb;
+	display: inline-block;
+	margin-left: 2em;
+}
+
+.message a:hover h3{
+	border-color: #4291cc;
+}
+
+.message:hover {
+	background-color: #eee;
 }
 
 /*#########################################################LINES CONTAINER STYLES#####################*/
@@ -418,9 +440,20 @@ h1 {
 	float: left;
 }
 
+.line_header {
+	background-color: #303030;
+	font-size: 80%;
+	text-transform: uppercase;
+	color: #fff;
+	padding: .5em;
+	display:none;
+}
+
 .line_info {
 	background-color: #fff;
-	border: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-top: 1px solid #ddd;
 	width: 100%;
 	padding: 1em;
 }

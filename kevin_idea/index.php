@@ -71,7 +71,7 @@
 	<div class="visible">
 	
 		<div class="notifier">
-			<h2><a href="#">You have 3 new messages.</a></h2>
+			<h2><span class="triangle"></span><a href="#">You have 3 new messages.</a></h2>
 		</div>
 		
 		<div class="new_buttons">
@@ -87,24 +87,27 @@
 	<div class="invisible">
 		
 		<div class="message">
+		<a href="#">
 		<div class="wrap">
 			<h3>New Message from Kevin Zweerink</h3>
-			<a href="#">Read</a>
-		</div>
+			<span class="leader">//Hey man, just wanted to see if you were into the idea of slacklining on next thursd...</span>
+		</div></a>
 		</div>
 		
 		<div class="message">
+		<a href="#">
 		<div class="wrap">
 			<h3>New Message from Kevin Zweerink</h3>
-			<a href="#">Read</a>
-		</div>
+			<span class="leader">//Hey man, just wanted to see if you were into the idea of slacklining on next thursd...</span>
+		</div></a>
 		</div>
 		
 		<div class="message">
+		<a href="#">
 		<div class="wrap">
 			<h3>New Message from Kevin Zweerink</h3>
-			<a href="#">Read</a>
-		</div>
+			<span class="leader">//Hey man, just wanted to see if you were into the idea of slacklining on next thursd...</span>
+		</div></a>
 		</div>
 		
 	</div>	
@@ -123,142 +126,167 @@
 			
 			<div class="line_list">
 		
-			<div class="line">
-				<div class="line_info">
-					<span>Where: Byrd Park</span>
-					<span>Time: 11:00 AM</span>
-					<span>Date: May 21, 2013</span>
+				<div class="line">
+					<div class="line_header">
+						<h2>May 21, 2013</h2>
+					</div>
+					<div class="line_info">
+						<span>Place: Byrd Park</span>
+						<span>Time: 11:00 AM</span>
+						<span>Level: Intermediate</span>
+					</div>
+					
+					<div class="line_descrip">
+						<p>Come hang out. Open to all levels. We will have a longline and a shorter one set up for beginners.</p>
+					</div>
+				
+					<div class="action_buttons">
+						<a href="#">Join Line</a>
+						<a href="#">More Info</a>
+					</div>
 				</div>
 				
-				<div class="line_descrip">
-					<p>Come hang out. Open to all levels. We will have a longline and a shorter one set up for beginners.</p>
-				</div>
-			
-				<div class="action_buttons">
-					<a href="#">Join Line</a>
-					<a href="#">More Info</a>
-				</div>
-			</div>
-			
-			<div class="line">
-				<div class="line_info">
-					<span>Where: Byrd Park</span>
-					<span>Time: 11:00 AM</span>
-					<span>Date: May 21, 2013</span>
-				</div>
+								<div class="line">
+					<div class="line_header">
+						<h2>May 21, 2013</h2>
+					</div>
+					<div class="line_info">
+						<span>Place: Byrd Park</span>
+						<span>Time: 11:00 AM</span>
+						<span>Level: Intermediate</span>
+					</div>
+					
+					<div class="line_descrip">
+						<p>Come hang out. Open to all levels. We will have a longline and a shorter one set up for beginners.</p>
+					</div>
 				
-				<div class="line_descrip">
-					<p>Come hang out. Open to all levels. We will have a longline and a shorter one set up for beginners.</p>
+					<div class="action_buttons">
+						<a href="#">Join Line</a>
+						<a href="#">More Info</a>
+					</div>
 				</div>
-			
-				<div class="action_buttons">
-					<a href="#">Join Line</a>
-					<a href="#">More Info</a>
-				</div>
-			</div>
-			
-			<div class="line">
-				<div class="line_info">
-					<span>Where: Byrd Park</span>
-					<span>Time: 11:00 AM</span>
-					<span>Date: May 21, 2013</span>
-				</div>
+
+				<div class="line">
+					<div class="line_header">
+						<h2>May 21, 2013</h2>
+					</div>
+					<div class="line_info">
+						<span>Place: Byrd Park</span>
+						<span>Time: 11:00 AM</span>
+						<span>Level: Intermediate</span>
+					</div>
+					
+					<div class="line_descrip">
+						<p>Come hang out. Open to all levels. We will have a longline and a shorter one set up for beginners.</p>
+					</div>
 				
-				<div class="line_descrip">
-					<p>Come hang out. Open to all levels. We will have a longline and a shorter one set up for beginners.</p>
+					<div class="action_buttons">
+						<a href="#">Join Line</a>
+						<a href="#">More Info</a>
+					</div>
 				</div>
-			
-				<div class="action_buttons">
-					<a href="#">Join Line</a>
-					<a href="#">More Info</a>
-				</div>
-			</div>
-			
-			<div class="line">
-				<div class="line_info">
-					<span>Where: Byrd Park</span>
-					<span>Time: 11:00 AM</span>
-					<span>Date: May 21, 2013</span>
-				</div>
+
+				<div class="line">
+					<div class="line_header">
+						<h2>May 21, 2013</h2>
+					</div>
+					<div class="line_info">
+						<span>Place: Byrd Park</span>
+						<span>Time: 11:00 AM</span>
+						<span>Level: Intermediate</span>
+					</div>
+					
+					<div class="line_descrip">
+						<p>Come hang out. Open to all levels. We will have a longline and a shorter one set up for beginners.</p>
+					</div>
 				
-				<div class="line_descrip">
-					<p>Come hang out. Open to all levels. We will have a longline and a shorter one set up for beginners.</p>
+					<div class="action_buttons">
+						<a href="#">Join Line</a>
+						<a href="#">More Info</a>
+					</div>
 				</div>
-			
-				<div class="action_buttons">
-					<a href="#">Join Line</a>
-					<a href="#">More Info</a>
-				</div>
-			</div>
-			
-			<div class="line">
-				<div class="line_info">
-					<span>Where: Byrd Park</span>
-					<span>Time: 11:00 AM</span>
-					<span>Date: May 21, 2013</span>
-				</div>
+
+				<div class="line">
+					<div class="line_header">
+						<h2>May 21, 2013</h2>
+					</div>
+					<div class="line_info">
+						<span>Place: Byrd Park</span>
+						<span>Time: 11:00 AM</span>
+						<span>Level: Intermediate</span>
+					</div>
+					
+					<div class="line_descrip">
+						<p>Come hang out. Open to all levels. We will have a longline and a shorter one set up for beginners.</p>
+					</div>
 				
-				<div class="line_descrip">
-					<p>Come hang out. Open to all levels. We will have a longline and a shorter one set up for beginners.</p>
+					<div class="action_buttons">
+						<a href="#">Join Line</a>
+						<a href="#">More Info</a>
+					</div>
 				</div>
-			
-				<div class="action_buttons">
-					<a href="#">Join Line</a>
-					<a href="#">More Info</a>
-				</div>
-			</div>
-			
-			<div class="line">
-				<div class="line_info">
-					<span>Where: Byrd Park</span>
-					<span>Time: 11:00 AM</span>
-					<span>Date: May 21, 2013</span>
-				</div>
+
+				<div class="line">
+					<div class="line_header">
+						<h2>May 21, 2013</h2>
+					</div>
+					<div class="line_info">
+						<span>Place: Byrd Park</span>
+						<span>Time: 11:00 AM</span>
+						<span>Level: Intermediate</span>
+					</div>
+					
+					<div class="line_descrip">
+						<p>Come hang out. Open to all levels. We will have a longline and a shorter one set up for beginners.</p>
+					</div>
 				
-				<div class="line_descrip">
-					<p>Come hang out. Open to all levels. We will have a longline and a shorter one set up for beginners.</p>
+					<div class="action_buttons">
+						<a href="#">Join Line</a>
+						<a href="#">More Info</a>
+					</div>
 				</div>
-			
-				<div class="action_buttons">
-					<a href="#">Join Line</a>
-					<a href="#">More Info</a>
-				</div>
-			</div>
-			
-			<div class="line">
-				<div class="line_info">
-					<span>Where: Byrd Park</span>
-					<span>Time: 11:00 AM</span>
-					<span>Date: May 21, 2013</span>
-				</div>
+
+				<div class="line">
+					<div class="line_header">
+						<h2>May 21, 2013</h2>
+					</div>
+					<div class="line_info">
+						<span>Place: Byrd Park</span>
+						<span>Time: 11:00 AM</span>
+						<span>Level: Intermediate</span>
+					</div>
+					
+					<div class="line_descrip">
+						<p>Come hang out. Open to all levels. We will have a longline and a shorter one set up for beginners.</p>
+					</div>
 				
-				<div class="line_descrip">
-					<p>Come hang out. Open to all levels. We will have a longline and a shorter one set up for beginners.</p>
+					<div class="action_buttons">
+						<a href="#">Join Line</a>
+						<a href="#">More Info</a>
+					</div>
 				</div>
-			
-				<div class="action_buttons">
-					<a href="#">Join Line</a>
-					<a href="#">More Info</a>
-				</div>
-			</div>
-			
-			<div class="line">
-				<div class="line_info">
-					<span>Where: Byrd Park</span>
-					<span>Time: 11:00 AM</span>
-					<span>Date: May 21, 2013</span>
-				</div>
+
+				<div class="line">
+					<div class="line_header">
+						<h2>May 21, 2013</h2>
+					</div>
+					<div class="line_info">
+						<span>Place: Byrd Park</span>
+						<span>Time: 11:00 AM</span>
+						<span>Level: Intermediate</span>
+					</div>
+					
+					<div class="line_descrip">
+						<p>Come hang out. Open to all levels. We will have a longline and a shorter one set up for beginners.</p>
+					</div>
 				
-				<div class="line_descrip">
-					<p>Come hang out. Open to all levels. We will have a longline and a shorter one set up for beginners.</p>
+					<div class="action_buttons">
+						<a href="#">Join Line</a>
+						<a href="#">More Info</a>
+					</div>
 				</div>
+
 			
-				<div class="action_buttons">
-					<a href="#">Join Line</a>
-					<a href="#">More Info</a>
-				</div>
-			</div>
-	
 			</div>
 	
 		</div>
