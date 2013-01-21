@@ -4,6 +4,8 @@ require_once 'class.Database.inc.php';
 
 
 class Line {
+
+	//Variables that are real attributes
 	
 	private $city;
 	private $state;
@@ -19,13 +21,19 @@ class Line {
 	private $time;
 	private $message;
 	
+	//Variables that are for method things
+	
 	private $line_info_ready=FALSE;
 	private $error_messages;
 	private $validation_messages = array();
 	private $validation_missing = array();
 	
+	//Database variables
+	
 	private $sql;
 	private $db;
+	
+	//Constructor - pass attributes to class, will set them and initialize DB
 	
 	public function __construct($city=NULL, $state=NULL, $location=NULL, $length=NULL, $type=NULL, $width=NULL, $creator=NULL, $equipment_accounted=NULL, $equipment_needed=NULL, $date=NULL, $time=NULL, $message=NULL) {
 		$this->city                = $city;
@@ -44,6 +52,8 @@ class Line {
 	
 	}
 	
+	//Takes messages from form validation process and formats them to be output as html in p tags.
+	
 	public function format_messages() {
 		if (!empty($this->validation_missing)) {
 		    $this->error_messages .= "<p>Please fill out the following fields:";
@@ -60,6 +70,8 @@ class Line {
 		    }
 	    }
 	}
+	
+	//Validates form info when creating a new line
 	
 	public function prep_line_info() {
     
@@ -101,6 +113,8 @@ class Line {
 	    }
 	  
     }
+    
+    //Takes valid info for new line and inserts into DB via $this->db
 	
 	public function create_line() {
 	
@@ -116,15 +130,21 @@ class Line {
 				
 	}
 	
+	//Gets variables inside this class
+	
 	public function display($arg) {
 	    echo $this->$arg;
     }
+    
+    //Has not been written yet.
     
 	public function edit_line() {
 		
 		//Uses Database class (unfinished) to change parameters of the line.
 		
 	}
+	
+	//Also unwritten
 	
 	public function rate_line() {
 		

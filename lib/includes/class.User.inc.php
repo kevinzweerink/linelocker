@@ -3,6 +3,9 @@
 require_once 'class.Database.inc.php';
 
 class User {
+
+	//Attribute vars
+	
     private $first_name;
     private $last_name;
     private $username;
@@ -18,14 +21,20 @@ class User {
     public  $saved_form_data = array();
     public  $message;
     
+    //Method vars
+    
     private $validation_missing = array();
     private $validation_messages = array();
     private $user_info_ready = FALSE;
     
     private $display_name;
     
+    //DB vars
+    
     private $db;
     private $sql;
+    
+    //Assigns class vars plus initialized DB conn
     
     public function __construct ($first_name=NULL, $last_name=NULL, $password=NULL, $confirm=NULL, $email=NULL, $experience=NULL, $equipment=NULL, $city=NULL, $state=NULL, $country=NULL) {
         $this->first_name   = $first_name;
@@ -43,6 +52,8 @@ class User {
         $this->display_name = ucfirst($first_name)." ".ucfirst($last_name);
         $this->db           = new Database();
     }
+    
+    //Creates user
     
     public function create_user() {
     
@@ -67,6 +78,8 @@ class User {
         
     }
     
+    //Formats form validation errors exports as p tags
+    
     public function format_messages() {
 	    if (!empty($this->validation_missing)) {
 		    $this->message .= "<p>Please fill out the following fields:";
@@ -83,6 +96,8 @@ class User {
 		    }
 	    }
     }
+    
+    //Validates form
     
     public function prep_user_info() {
     
@@ -122,6 +137,8 @@ class User {
 	    }
 	  
     }
+    
+    //Displays anything from class
     
     public function display($arg) {
 	    echo $this->$arg;

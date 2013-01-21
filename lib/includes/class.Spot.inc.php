@@ -3,6 +3,8 @@
 require_once 'class.Database.inc.php';
 
 class Spot{
+
+	//Attribute variables
     
     private $city;
     private $state;
@@ -13,6 +15,8 @@ class Spot{
     private $user;
     private $id;
     
+    //Method variables
+    
     private $average_rating;
     private $all_ratings;
     private $db;
@@ -22,6 +26,7 @@ class Spot{
     
     public $number_of_rates;
     
+    //Constructor: assigns attribute vars and initializes DB
     
     public function __construct($city, $state, $location, $rating, $review, $creator, $user, $id){
         $this->city     = $city;
@@ -35,6 +40,8 @@ class Spot{
         $this->db       = new Database();
         
     }
+    
+    //Averages all ratings on line into one average rating
     
     public function average_rating() {
         //function to average spot ratings using ratings column
@@ -57,16 +64,22 @@ class Spot{
         $this->db->execute_sql($this->sql);    
     }
     
+    //Creates the spot
+    
     public function create_spot() {
         $this->sql = "INSERT INTO spot (city, state_province, location, rating, review, creator, user) VALUES ('$this->city', '$this->state', '$this->location', '$this->rating', '$this->review', '$this->creator', '$this->user')";
         $this->db->execute_sql($this->sql);
     }
+    
+    //For reviews and ratings
  
     public function r_spot($r) {
         $this->sql = "INSERT INTO spot $r VALUES '$this->$r'";
         $this->db->execute_sql($this->sql);
         $this->average_rating();
     }
+    
+    //Displays
     
     public function display_spot($request) {
        $this->sql = "SELECT $request FROM spot WHERE id='$this->id'";

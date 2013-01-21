@@ -3,6 +3,8 @@
 require_once 'class.Database.inc.php';
 class Search {
 
+	//Gets results by searching in DB
+
 	public static $sql;
 	public static $db;
 	public static $search_results;
